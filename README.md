@@ -29,6 +29,8 @@ Através do ensino prático da **coleta seletiva**, o projeto visa mitigar a pro
 
 ## 🎮 Como Jogar
 
+0. Preview page: https://station137.github.io/amiguinhos-da-natureza/
+
 1. Um objeto reciclável aparecerá na mão do ursinho.
 2. **Dica:** Se tiver dúvidas de qual objeto se trata, clique sobre ele para revelar a etiqueta com o nome.
 3. Se quiser receber uma dica do seu Amiguinho da Natureza, de como jogar, basta clicar sobre o ursinho para abrir seu balão de diálogo.
