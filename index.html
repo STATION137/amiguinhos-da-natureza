@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amiguinhos da Natureza - Reciclagem</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="style.css">
+  <!-- Importação de fontes arredondadas e amigáveis -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background com efeito mesh orgânico -->
+  <div class="bg-mesh" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- Toast(pop-up de certo/errado) feedback -->
+  <div class="toast-wrapper" id="toastWrapper">
+    <div class="toast-png-content" id="toastText"></div>
+  </div>
+
+  <main class="scene">
+
+    <!-- Título principal da página -->
+    <header class="page-header">
+      <div class="title-collage">
+        <div class="title-deco">✦ SE PA RE ✦</div>
+        <h1 class="sr-only">Amiguinhos da Natureza</h1>
+        <img src="assets/title/magazine-title.png" alt="Amiguinhos da Natureza" class="title-image">		
+        <p class="page-subtitle">♻ UMA AVENTURA DE RECICLAGEM ♻</p>
+      </div>
+    </header>
+
+    <div class="painting-wrap">
+      <div class="painting" id="painting">
+
+        <!-- Viewport interno para recortar o cenário e os elementos em movimento (Evita vazamentos) -->
+        <div class="painting-viewport">
+          <!-- Background do quadro -->
+          <img src="assets/background/room.jpeg" alt="Cenário" class="layer background" id="bgImg">
+
+          <!-- Doll / Ursinho -->
+          <div class="layer doll-container" id="dollContainer">
+            <img src="assets/doll/front-empty.svg" alt="Amiguinhos da Natureza" class="doll-img" id="dollImg">
+            <!-- Ponto de clique -->
+            <button class="doll-click-area" id="dollClick" aria-label="Clique no Amiguinhos da Natureza para ver a mensagem"></button>
+          </div>
+
+          <!-- Held item (Objeto flutuante mais próximo do urso) -->
+          <div class="held-item" id="heldItem">
+            <img src="" alt="Objeto" id="heldImg">
+            <div class="held-label" id="heldLabel"></div>
+          </div>
+        </div>
+
+        <!-- Balão pop-up (Fora do viewport de corte para evitar que seja decepado) -->
+        <div class="speech-bubble-wrapper" id="speechBubble" aria-hidden="true">
+          <div class="bubble-content-text">
+            Oi! Eu sou um dos <strong>Amiguinhos da Natureza</strong>!
+            <br>
+            Preciso da sua ajuda para descartar cada objeto no lugar certo.
+            <br>
+            <em>Toque nos cards abaixo para começar!</em>
+          </div>
+        </div>
+
+        <!-- Moldura decorativa em PNG por cima de tudo -->
+        <img src="assets/layout/main-frame.png" class="painting-frame" alt="" aria-hidden="true">
+
+        <!-- Painel do HUD (Pontuação em PNG com textos em dourado ampliado) -->
+        <div class="hud-container">
+          <img src="assets/layout/hud-panel.png" class="hud-bg" alt="" aria-hidden="true">
+          <div class="hud-text-overlay">
+            <div class="hud-section">
+              <span class="hud-label">PONTOS</span>
+              <span class="hud-value" id="score">0</span>
+            </div>
+            <div class="hud-section">
+              <span class="hud-label">SEQUÊNCIA</span>
+              <span class="hud-value" id="streak">⭐ 0</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Cards de reciclagem (Mantidos sempre com 4 colunas responsivas) -->
+    <div class="cards-area" id="cardsArea">
+      <!-- Cards gerados pelo JS -->
+    </div>
+
+    <!-- Seção ODS -->
+    <section class="ods-section glass" aria-labelledby="odsTitle">
+      <div class="ods-layout">
+        
+        <!-- Coluna Esquerda: Texto Informativo -->
+        <div class="ods-text">
+          <h2 id="odsTitle" class="ods-title">CIDADES E COMUNIDADES SUSTENTÁVEIS</h2>
+          
+          <p class="ods-desc">
+            Cada objeto que você descarta corretamente ajuda a construir um futuro melhor! A 
+            <span class="highlight-green">reciclagem</span> é um dos caminhos para reduzir a 
+            poluição, preservar a natureza e tornar as cidades mais limpas, verdes e 
+            <span class="highlight-blue">justas</span> para todos.
+          </p>
+          
+          <div class="ods-divider"></div>
+          
+          <div class="ods-tagline-container">
+            <p class="ods-tagline">
+              🌱 Pequenas ações diárias transformam grandes cidades.
+            </p>
+            <span class="tagline-deco">— Amiguinhos da Natureza ♻</span>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Logos ODS e UniOpet -->
+        <div class="ods-logos">
+          <img src="assets/ods/ods11.png" alt="Logo ODS 11" class="logo-ods">
+          <img src="assets/ods/uniopet.png" alt="Logo UniOpet" class="logo-uniopet">
+        </div>
+        
+      </div>
+
+      <!-- Badges Centralizadas no Rodapé do Bloco -->
+      <div class="ods-badges">
+        <span class="badge">♻ RECICLAR</span>
+        <span class="badge">🌍 PRESERVAR</span>
+        <span class="badge">🏙️ TRANSFORMAR</span>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <p>♻ ODS11 Cidades e Comunidades Sustentáveis · Feito com ♡ para educar sobre reciclagem.</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
