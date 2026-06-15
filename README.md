@@ -1,4 +1,4 @@
-<img src="[URL_da_Imagem](https://github.com/STATION137/amiguinhos-da-natureza/blob/main/preview.png)" alt="Preview da pagina">
+<img src="[(https://github.com/STATION137/amiguinhos-da-natureza/blob/main/preview.png)" alt="Preview da pagina">
 
 # ♻️ Amiguinhos da Natureza: Uma Aventura de Reciclagem
 
