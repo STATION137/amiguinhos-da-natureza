@@ -1,4 +1,4 @@
-<p float="left">
+<p float="center">
 <img src="https://github.com/STATION137/amiguinhos-da-natureza/blob/main/preview.png" alt="Preview da pagina">
 </p>
 # ♻️ Amiguinhos da Natureza: Uma Aventura de Reciclagem
