@@ -99,10 +99,10 @@ const IMAGES = {
     wrongToast: 'assets/layout/toast-wrong.png'
   },
   cards: {
-    papel: { frame: 'assets/cards/card-papel.png', bg: 'assets/cards/bg-papel.png' },
-    plastico: { frame: 'assets/cards/card-plastico.png', bg: 'assets/cards/bg-plastico.png' },
-    metal: { frame: 'assets/cards/card-metal.png', bg: 'assets/cards/bg-metal.png' },
-    vidro: { frame: 'assets/cards/card-vidro.png', bg: 'assets/cards/bg-vidro.png' }
+    papel: { frame: 'assets/cards/card-papel.png'},
+    plastico: { frame: 'assets/cards/card-plastico.png'},
+    metal: { frame: 'assets/cards/card-metal.png'},
+    vidro: { frame: 'assets/cards/card-vidro.png'}
   },
   selectedDollKey
 };
@@ -188,13 +188,6 @@ categories.forEach((cat) => {
   cardContainer.className = 'card-container';
   cardContainer.dataset.cat = cat;
 
-  // Ilustração base interna
-  const bgArt = document.createElement('img');
-  bgArt.className = 'card-bg-art';
-  bgArt.src = IMAGES.cards[cat].bg;
-  bgArt.alt = '';
-
-  // Moldura decorativa por cima
   const framePng = document.createElement('img');
   framePng.className = 'card-frame-png';
   framePng.src = IMAGES.cards[cat].frame;
@@ -203,11 +196,9 @@ categories.forEach((cat) => {
   // Renderiza fallback caso as imagens principais falhem ou não sejam localizadas
   framePng.onerror = function() {
     this.style.display = 'none';
-    bgArt.style.display = 'none';
     cardContainer.innerHTML = createFallbackCard(cat);
   };
 
-  cardContainer.appendChild(bgArt);
   cardContainer.appendChild(framePng);
   cardContainer.addEventListener('click', () => handleChoice(cat, cardContainer));
   cardsArea.appendChild(cardContainer);
@@ -291,8 +282,8 @@ function showToast(text, isCorrect) {
 
 // --- Sistema de Áudio Seguro (Fallback Local) ---
 const sounds = {
-  correct: new Audio('assets/audio/correct.wav'),
-  wrong: new Audio('assets/audio/wrong.wav')
+  correct: new Audio('assets/audio/correct.WAV'),
+  wrong: new Audio('assets/audio/wrong.WAV')
 };
 
 function playSound(type) {
@@ -406,7 +397,6 @@ function preloadAll() {
   Object.values(IMAGES.doll).forEach(preload);
   Object.values(IMAGES.cards).forEach(c => {
     preload(c.frame);
-    preload(c.bg);
   });
   Object.values(ITEMS).forEach(cat => {
     cat.examples.forEach(ex => preload(ex.img));
