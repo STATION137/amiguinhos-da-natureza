@@ -412,17 +412,6 @@ html, body {
   transform: translateY(-8px) scale(1.04);
 }
 
-/* Ilustração de fundo do card */
-.card-bg-art {
-  position: absolute;
-  inset: 6%; /* Recuo para acomodar perfeitamente dentro da moldura */
-  width: 88%;
-  height: 88%;
-  object-fit: cover;
-  border-radius: 12px;
-  z-index: 1;
-}
-
 /* Moldura PNG superior decorativa */
 .card-frame-png {
   position: absolute;
@@ -620,5 +609,22 @@ html, body {
   .ods-section {
     padding: 24px;
     border-radius: 24px;
+  }
+}
+
+/* regra de ajuste específica para telas pequenas */
+
+@media (max-width: 600px) {
+  .speech-bubble-wrapper {
+    width: 50%;                 /* Dá mais espaço lateral para o texto respirar */
+    aspect-ratio: auto;         /* Remove a proporção travada que espremia o balão */
+    height: auto;               /* O contêiner agora cresce de acordo com o texto */
+    padding: 16px 20px;         /* Espaçamento interno confortável */
+    background-size: 100% 100%; /* Estica o PNG do balão para envelopar o texto perfeitamente */
+  }
+  
+  .bubble-content-text {
+    font-size: 14px;            /* Reduz levemente a fonte para caber em telas pequenas */
+    line-height: 1.35;
   }
 }
