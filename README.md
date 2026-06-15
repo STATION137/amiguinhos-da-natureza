@@ -1,3 +1,5 @@
+![Image preview da pagina][URL_DA_IMAGEM](https://github.com/STATION137/amiguinhos-da-natureza/blob/main/preview.png)
+
 # ♻️ Amiguinhos da Natureza: Uma Aventura de Reciclagem
 
 > **Projeto de conscientização ambiental universitaria, alinhado à ODS 11 da ONU.**
